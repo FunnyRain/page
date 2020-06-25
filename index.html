@@ -127,8 +127,8 @@
         }
     </style>
 
-    <img src="https://avatars2.githubusercontent.com/u/17975993?s=400&u=101798358d98586c0fa47a86099ef5cee21e9c1f&v=4"
-         alt="ava" style="border-radius: 50%;width: 128px;height: 128px"/>
+    <img class="ava" src="https://avatars2.githubusercontent.com/u/17975993?s=400&u=101798358d98586c0fa47a86099ef5cee21e9c1f&v=4"
+         alt="ava" style="border-radius: 50%"/>
 
     <div class="sk-folding-cube" style="width: 50px;height: 50px;margin-top: -15px;margin-bottom: 0px;">
         <div class="sk-cube1 sk-cube"></div>
@@ -182,11 +182,32 @@
             overflow: hidden
         }
 
+        .ava {
+            width: 128px;
+            height: 128px
+        }
+
         @media screen and (min-width: 800px) {
             .slider {
                 width: 650px;
                 text-align: center;
                 overflow: hidden
+            }
+            .ava {
+                width: 155px;
+                height: 155px
+            }
+        }
+
+        @media screen and (min-width: 1300px) {
+            .slider {
+                width: 1000px;
+                text-align: center;
+                overflow: hidden
+            }
+            .ava {
+                width: 177px;
+                height: 182px
             }
         }
 
