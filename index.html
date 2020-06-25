@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>FunnyRain — Портфолио</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b9f9801324.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div style="position: fixed;top: 0;left: 0;z-index: 99999;display: flex;flex-direction: column;justify-content: center;align-items: center;width: 100%;height: 100%;margin: 0;padding: 0;overflow: hidden;background-color: #1A1A1A;">
+    <style>
+
+        html body {
+            height: 100%;
+            overflow: hidden
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .sk-folding-cube {
+            width: 48px;
+            height: 48px;
+            position: relative;
+            -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg)
+        }
+
+        .sk-folding-cube .sk-cube {
+            float: left;
+            width: 50%;
+            height: 50%;
+            position: relative;
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1)
+        }
+
+        .sk-folding-cube .sk-cube:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+            animation: sk-foldCubeAngle 2.4s infinite linear both;
+            -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%
+        }
+
+        .sk-folding-cube .sk-cube2 {
+            -webkit-transform: scale(1.1) rotateZ(90deg);
+            transform: scale(1.1) rotateZ(90deg)
+        }
+
+        .sk-folding-cube .sk-cube3 {
+            -webkit-transform: scale(1.1) rotateZ(180deg);
+            transform: scale(1.1) rotateZ(180deg)
+        }
+
+        .sk-folding-cube .sk-cube4 {
+            -webkit-transform: scale(1.1) rotateZ(270deg);
+            transform: scale(1.1) rotateZ(270deg)
+        }
+
+        .sk-folding-cube .sk-cube2:before {
+            -webkit-animation-delay: .3s;
+            animation-delay: .3s
+        }
+
+        .sk-folding-cube .sk-cube3:before {
+            -webkit-animation-delay: .6s;
+            animation-delay: .6s
+        }
+
+        .sk-folding-cube .sk-cube4:before {
+            -webkit-animation-delay: .9s;
+            animation-delay: .9s
+        }
+
+        @-webkit-keyframes sk-foldCubeAngle {
+            0%, 10% {
+                -webkit-transform: perspective(140px) rotateX(-180deg);
+                transform: perspective(140px) rotateX(-180deg);
+                opacity: 0
+            }
+            25%, 75% {
+                -webkit-transform: perspective(140px) rotateX(0);
+                transform: perspective(140px) rotateX(0);
+                opacity: 1
+            }
+            100%, 90% {
+                -webkit-transform: perspective(140px) rotateY(180deg);
+                transform: perspective(140px) rotateY(180deg);
+                opacity: 0
+            }
+        }
+
+        @keyframes sk-foldCubeAngle {
+            0%, 10% {
+                -webkit-transform: perspective(140px) rotateX(-180deg);
+                transform: perspective(140px) rotateX(-180deg);
+                opacity: 0
+            }
+            25%, 75% {
+                -webkit-transform: perspective(140px) rotateX(0);
+                transform: perspective(140px) rotateX(0);
+                opacity: 1
+            }
+            100%, 90% {
+                -webkit-transform: perspective(140px) rotateY(180deg);
+                transform: perspective(140px) rotateY(180deg);
+                opacity: 0
+            }
+        }
+
+        .text-anim {
+        }
+    </style>
+
+    <img src="https://avatars2.githubusercontent.com/u/17975993?s=400&u=101798358d98586c0fa47a86099ef5cee21e9c1f&v=4"
+         alt="ava" style="border-radius: 50%;width: 128px;height: 128px"/>
+
+    <div class="sk-folding-cube" style="width: 50px;height: 50px;margin-top: -15px;margin-bottom: 0px;">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+    </div>
+
+    <h1 class="text-anim"
+        style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;color: white;font-size: 24pt">
+        FunnyRain <i class="fab fa-github github" onclick="location.href='https://github.com/FunnyRain';"></i>
+        <i class="fab fa-vk github" onclick="location.href='https://vk.com/vyxel';"></i></h1>
+
+    <div class="followers text-anim"
+         style="color: #808080;font-size: 14px;font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;margin-top: -23px"></div>
+    <script type="text/javascript">
+        $(function () {
+            $.getJSON('https://api.github.com/users/FunnyRain/followers', function (data) {
+                let FollowersElement = document.querySelector(`.followers`);
+                if (!FollowersElement) return;
+                FollowersElement.innerHTML = `Подписчики: ${data.length}`;
+            });
+        });
+    </script>
+
+    <div class="messages text-anim"
+         style="color: #808080;font-size: 14px;font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;margin-top: 5px"></div>
+    <script>
+        $(function () {
+            let Messages = [
+                'Бэкенд программист PHP, NodeJS',
+                'Школьник',
+                'Фрилансер'
+                /** todo */
+            ];
+            let MessageElement = document.querySelector(`.messages`);
+            if (!MessageElement) return;
+            let messageIndex = Math.floor(Math.random() * Messages.length);
+            MessageElement.innerHTML = Messages[messageIndex];
+        });
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        .slider {
+            width: 300px;
+            text-align: center;
+            overflow: hidden
+        }
+
+        @media screen and (min-width: 800px) {
+            .slider {
+                width: 650px;
+                text-align: center;
+                overflow: hidden
+            }
+        }
+
+        .slides {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch
+        }
+
+        .slides::-webkit-scrollbar {
+            width: 10px;
+            height: 10px
+        }
+
+        .slides::-webkit-scrollbar-thumb {
+            background: black;
+            border-radius: 10px
+        }
+
+        .slides::-webkit-scrollbar-track {
+            background: transparent
+        }
+
+        .slides > div {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            width: 300px;
+            height: 300px;
+            margin-right: 50px;
+            border-radius: 10px;
+            background: #eee;
+            transform-origin: center center;
+            transform: scale(1);
+            transition: transform 0.5s;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px
+        }
+
+        .slider > a {
+            display: inline-flex;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: white;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 0 0.5rem 0;
+            position: relative
+        }
+
+        .slider > a:active {
+            top: 1px
+        }
+
+        .slider > a:focus {
+            background: #000
+        }
+
+        @supports (scroll-snap-type) {
+            .slider > a {
+                display: none
+            }
+        }
+
+        #slide-1 {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 20s ease infinite
+        }
+
+        #slide-2 {
+            background: linear-gradient(-45deg, #33ccff, #ff99cc);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%
+            }
+            50% {
+                background-position: 100% 50%
+            }
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        .github {
+            cursor: pointer
+        }
+    </style>
+    <div class="slider" style="margin-top: 40px;">
+        <div class="slides">
+
+            <div class="github" onclick="location.href='https://github.com/FunnyRain/vkbot';" id="slide-1">
+                <div style="text-align: center;">
+                    <img src="github.png" alt="logo" style="width: 128px;height: 128px"/>
+                    <p style="color: white;font-size: 18px;font-weight: bold;font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;margin-top: -20px">
+                        VKBOT</p>
+                    <p style="color: white;font-size: 14px;font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;margin-top: -20px">
+                        Простая библиотека для Вконтакте с поддержкой <b><span style="color: #87c899; ">LongPoll</span></b>
+                        и <b><span
+                            style="color: #c3a5c5; ">CallBack API</span></b></p>
+                </div>
+            </div>
+
+            <div class="github" onclick="location.href='https://github.com/FunnyRain';" id="slide-2">
+                <div style="text-align: center;">
+                    <img src="github.png" alt="logo" style="width: 128px;height: 128px"/>
+                    <p style="color: white;font-size: 18px;font-weight: bold;font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;margin-top: -20px">
+                        TELEGRAMBOT</p>
+                    <p style="color: white;font-size: 14px;font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;margin-top: -20px">
+                        Простая библиотека для Телеграмм <b><span style="color: #87c899; ">(СКОРО)</span></b></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
